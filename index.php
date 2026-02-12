@@ -213,6 +213,36 @@
                 </div>
             </a>
 
+            <!-- Milestone 1: Individual Data Visualizations -->
+            <a href="data-visualizations/" class="assignment-card">
+                <div class="assignment-number">4</div>
+                <span class="status-badge">✓ Complete</span>
+                <h2>Individual Data Visualizations</h2>
+                <p class="due-date">Project Milestone | Fall 2025</p>
+                <p>Custom geographic and statistical visualizations for the final project: facility distribution maps, access heatmaps, regional comparisons, and priority area matrices.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">GeoPandas</span>
+                    <span class="tech-badge">Leaflet.js</span>
+                    <span class="tech-badge">D3.js</span>
+                    <span class="tech-badge">Plotly</span>
+                </div>
+            </a>
+
+            <!-- Milestone 2: Three Core Charts -->
+            <a href="three-charts/" class="assignment-card">
+                <div class="assignment-number">5</div>
+                <span class="status-badge">✓ Complete</span>
+                <h2>Three Core Charts Analysis</h2>
+                <p class="due-date">Project Milestone | Fall 2025</p>
+                <p>Three essential charts analyzing healthcare equity: regional facility density comparison, distance distribution histogram, and socioeconomic correlation scatter plot.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">Chart.js</span>
+                    <span class="tech-badge">Matplotlib</span>
+                    <span class="tech-badge">Seaborn</span>
+                    <span class="tech-badge">SciPy</span>
+                </div>
+            </a>
+
             <!-- Final Project: LA Healthcare Access Mapping -->
             <a href="final-project/" class="assignment-card" style="grid-column: 1 / -1;">
                 <div class="assignment-number">🏆</div>
