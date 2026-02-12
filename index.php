@@ -152,6 +152,21 @@
             <p style="font-size: 1rem; margin-top: 10px;">Caleb Newton</p>
         </header>
 
+        <div style="background: rgba(255,255,255,0.95); border-radius: 15px; padding: 25px; margin-bottom: 30px; border-left: 5px solid #667eea;">
+            <h2 style="color: #333; font-size: 1.3rem; margin-bottom: 12px;">📝 Note About These Submissions</h2>
+            <p style="color: #555; line-height: 1.7; margin-bottom: 10px;">
+                It turns out I had already completed all three assignments below (Movies Lab, Chart Lab, and Mini-site) during the semester.
+                However, I received <strong>0/no grade</strong> on them in the system.
+            </p>
+            <p style="color: #555; line-height: 1.7; margin-bottom: 10px;">
+                <strong>These three assignments (1-3) are being resubmitted as proof of completion.</strong>
+                The actual incomplete work is the <strong>final group project</strong>, which I will complete and add to this page once finished.
+            </p>
+            <p style="color: #777; font-size: 0.9rem; font-style: italic;">
+                This page will be updated with the final project deliverables upon completion.
+            </p>
+        </div>
+
         <div class="assignments-grid">
             <!-- Assignment 1: Movies Lab -->
             <a href="movies/" class="assignment-card">
