@@ -152,18 +152,22 @@
             <p style="font-size: 1rem; margin-top: 10px;">Caleb Newton</p>
         </header>
 
-        <div style="background: rgba(255,255,255,0.95); border-radius: 15px; padding: 25px; margin-bottom: 30px; border-left: 5px solid #667eea;">
-            <h2 style="color: #333; font-size: 1.3rem; margin-bottom: 12px;">📝 Note About These Submissions</h2>
+        <div style="background: rgba(255,255,255,0.95); border-radius: 15px; padding: 25px; margin-bottom: 30px; border-left: 5px solid #4ade80;">
+            <h2 style="color: #333; font-size: 1.3rem; margin-bottom: 12px;">✅ Complete Submission Package</h2>
             <p style="color: #555; line-height: 1.7; margin-bottom: 10px;">
-                It turns out I had already completed all three assignments below (Movies Lab, Chart Lab, and Mini-site) during the semester.
-                However, I received <strong>0/no grade</strong> on them in the system.
+                <strong>Assignments 1-3:</strong> Individual labs (Movies, Chart, Mini-site) completed during the semester
+                but received <strong>0/no grade</strong> in the system. These are being <strong>resubmitted as proof of completion</strong>.
             </p>
             <p style="color: #555; line-height: 1.7; margin-bottom: 10px;">
-                <strong>These three assignments (1-3) are being resubmitted as proof of completion.</strong>
-                The actual incomplete work is the <strong>final group project</strong>, which I will complete and add to this page once finished.
+                <strong>Assignments 4-6:</strong> Final project milestone deliverables including individual data visualizations,
+                three core analytical charts, and two project-specific policy visualizations derived from the LA Healthcare Access Mapping platform.
             </p>
-            <p style="color: #777; font-size: 0.9rem; font-style: italic;">
-                This page will be updated with the final project deliverables upon completion.
+            <p style="color: #555; line-height: 1.7; margin-bottom: 10px;">
+                <strong>Final Project:</strong> Production-ready full-stack platform analyzing healthcare access gaps across LA County,
+                featuring interactive maps, geospatial analysis, RESTful API, and evidence-based policy recommendations serving 9.9M residents.
+            </p>
+            <p style="color: #22c55e; font-size: 0.95rem; font-weight: 600; margin-top: 15px;">
+                🎉 All deliverable assignments complete and deployed! (Peer critique assignment skipped - requires other groups' work)
             </p>
         </div>
 
