@@ -111,20 +111,12 @@
             font-weight: 600;
         }
 
-        .view-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: opacity 0.3s ease;
+        .assignment-card:hover h2 {
+            color: #667eea;
         }
 
-        .view-button:hover {
-            opacity: 0.9;
+        .assignment-card:hover .status-badge {
+            transform: scale(1.05);
         }
 
         footer {
@@ -162,7 +154,7 @@
 
         <div class="assignments-grid">
             <!-- Assignment 1: Movies Lab -->
-            <div class="assignment-card">
+            <a href="movies/" class="assignment-card">
                 <div class="assignment-number">1</div>
                 <span class="status-badge">✓ Complete</span>
                 <h2>Movie Studio + Genre Page</h2>
@@ -174,11 +166,10 @@
                     <span class="tech-badge">HTML</span>
                     <span class="tech-badge">CSS</span>
                 </div>
-                <a href="movies/" class="view-button">View Project →</a>
-            </div>
+            </a>
 
             <!-- Assignment 2: Health Chart Lab -->
-            <div class="assignment-card">
+            <a href="health-chart/" class="assignment-card">
                 <div class="assignment-number">2</div>
                 <span class="status-badge">✓ Complete</span>
                 <h2>Custom Health Chart</h2>
@@ -190,11 +181,10 @@
                     <span class="tech-badge">jQuery</span>
                     <span class="tech-badge">CSS</span>
                 </div>
-                <a href="health-chart/" class="view-button">View Project →</a>
-            </div>
+            </a>
 
             <!-- Assignment 3: Animated Presentation -->
-            <div class="assignment-card">
+            <a href="animated-presentation/" class="assignment-card">
                 <div class="assignment-number">3</div>
                 <span class="status-badge">✓ Complete</span>
                 <h2>Animated Presentation</h2>
@@ -206,8 +196,7 @@
                     <span class="tech-badge">HTML</span>
                     <span class="tech-badge">CSS</span>
                 </div>
-                <a href="animated-presentation/" class="view-button">View Project →</a>
-            </div>
+            </a>
         </div>
 
         <footer>
