@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canadian Population Centres — Interactive by Caleb Newton</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f4f7fc; --panel:#fff; --ink:#0f2740; --muted:#5b6472;
+    --accent:#1e6b45; --accent-soft:#e6f5ed;
+    --border:#d8e2f0; --hl:#fff4c2;
+  }
+  *{box-sizing:border-box}
+  body{ margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+  header, footer{background:var(--panel); border-bottom:1px solid var(--border)}
+  .wrap{max-width:980px; margin:0 auto; padding:18px}
+  h1{margin:0; font-size:28px; text-align:center}
+  h2{margin:0 0 8px}
+  p{margin:0 0 10px}
+
+  /* Top navigation to match the U.S. Cities style */
+  .topnav{display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap}
+  .topnav a{padding:8px 12px; background:var(--panel); border:1px solid var(--border); border-radius:10px; color:var(--accent); text-decoration:none; font-weight:600}
+  .topnav a:hover{background:var(--accent-soft)}
+
+  /* Containers */
+  #outercontainer { background-color: var(--panel); border:1px solid var(--border); border-radius: 12px; padding:16px; width: 96%; margin:14px auto; }
+  header h1 { margin:0; font-size: 24pt; text-align:center; }
+  header p { margin:6px 0 0 0; text-align:center; }
+
+  #walkthrough { text-align:center; margin:10px 0 0 0; }
+  #walkthrough button { 
+    margin:6px; padding:8px 12px; border:1px solid var(--border); border-radius:8px; 
+    background:var(--accent-soft); color:var(--ink); cursor:pointer; 
+  }
+  #walkthrough button:hover { background:#fff; }
+
+  figure { background-color: var(--panel); border:1px solid var(--border); border-radius: 12px; padding:10px; margin:12px 0; }
+  figcaption { color:var(--muted); font-size: 12pt; }
+
+  table { background-color:#fff; text-align:center; margin:auto; border-collapse: collapse; width:96%; border:1px solid var(--border) }
+  th, td { border:1px solid var(--border); padding:6px 8px; }
+  th { background-color: #f7fbff; color:var(--ink); position:relative; }
+  table tbody tr td:nth-child(3) { background-color: #eaf2fc; font-weight: bold; }
+  table tbody tr td:nth-child(1), table tbody tr td:nth-child(2){ text-align:left; }
+
+  .highlight  { background-color: #fff7e0; }
+  .highlight2 { background-color: var(--hl); }
+
+  .definition {
+    display:none;
+    position:absolute; left:50%; transform:translateX(-50%);
+    top:100%; margin-top:6px; white-space:nowrap;
+    background:#fff; color:#123; border:1px solid var(--border);
+    border-radius:6px; padding:6px 8px; z-index:5;
+  }
+
+  #messagebox { width: 90%; min-height: 120px; margin:14px auto; background-color: var(--accent); color:white; padding:10px; border-radius:9px; }
+
+  dl { width: 90%; margin: 10px auto; background-color: var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px; }
+  dt { background-color:var(--accent); color:white; margin:8px 0 0 0; padding:6px 8px; border-radius:6px; display:block; }
+  dd { color: var(--ink); margin:4px 0 8px 10px; display:none; }
+</style>
+<script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <h1>Canadian Population Centres — Interactive by Caleb Newton</h1>
+    <p>Hover rows to highlight; click a centre name to auto-build a summary below. Click header titles for quick tips.</p>
+    <nav class="topnav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="us-cities.html">U.S. Cities</a>
+      <a href="canadian-cities.html">Canadian Cities</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+    <div id="walkthrough">
+      <button id="btnDensest">Highlight 3 Densest</button>
+      <button id="btnSmallestArea">Highlight 3 Smallest by Land Area</button>
+    </div>
+  </div>
+</header>
+
+<div id="outercontainer">
+  <div id="messagebox">Click any centre name in the table to see a sentence-style summary here.</div>
+
+  <main>
+    <figure>
+      <table cellspacing="0" cellpadding="5" id="canadaGrid">
+        <thead>
+          <tr>
+            <td colspan="7" id="more"><h4 style="margin:6px 0;">Reveal data</h4></td>
+          </tr>
+          <tr id="tableheader">
+            <th>Centre
+              <div class="definition">City/urban centre (clickable to show a summary).</div>
+            </th>
+            <th>Province
+              <div class="definition">Two-letter province/territory code.</div>
+            </th>
+            <th>2021 Population
+              <div class="definition">Core column we sorted by; spotlighted on hover.</div>
+            </th>
+            <th>2016 Population</th>
+            <th>Change %</th>
+            <th>Land Area (km²)</th>
+            <th>Density (/km²)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="dense"><td class="title">Toronto</td><td>ON</td><td>2794356</td><td>2731571</td><td>+2.3%</td><td>630.2</td><td>4436</td></tr>
+          <tr class="dense"><td class="title">Montréal</td><td>QC</td><td>1763867</td><td>1704694</td><td>+3.5%</td><td>365.1</td><td>4831</td></tr>
+          <tr class="dense smallarea"><td class="title">Vancouver</td><td>BC</td><td>662248</td><td>631486</td><td>+4.9%</td><td>114.7</td><td>5776</td></tr>
+          <tr><td class="title">Calgary</td><td>AB</td><td>1324830</td><td>1237656</td><td>+7.0%</td><td>820.6</td><td>1614</td></tr>
+          <tr><td class="title">Edmonton</td><td>AB</td><td>1010899</td><td>932546</td><td>+8.4%</td><td>767.9</td><td>1317</td></tr>
+          <tr><td class="title">Ottawa–Gatineau</td><td>ON/QC</td><td>989657</td><td>934243</td><td>+5.9%</td><td>571.7</td><td>1731</td></tr>
+          <tr><td class="title">Winnipeg</td><td>MB</td><td>749607</td><td>705244</td><td>+6.3%</td><td>464.3</td><td>1614</td></tr>
+          <tr><td class="title">Québec City</td><td>QC</td><td>549459</td><td>531902</td><td>+3.3%</td><td>454.1</td><td>1210</td></tr>
+          <tr><td class="title">Hamilton</td><td>ON</td><td>579200</td><td>536917</td><td>+7.9%</td><td>293.5</td><td>1974</td></tr>
+          <tr><td class="title">Kitchener–Cambridge–Waterloo</td><td>ON</td><td>470015</td><td>417715</td><td>+12.5%</td><td>274.8</td><td>1711</td></tr>
+          <tr class="smallarea"><td class="title">Halifax</td><td>NS</td><td>348634</td><td>316701</td><td>+10.1%</td><td>234.8</td><td>1485</td></tr>
+          <tr class="smallarea"><td class="title">London</td><td>ON</td><td>336539</td><td>322500</td><td>+4.3%</td><td>232.7</td><td>1446</td></tr>
+        </tbody>
+      </table>
+      <figcaption><strong>Figure 1.</strong> Selected Canadian population centres (sorted by <em>2021 Population</em>, the core column).</figcaption>
+    </figure>
+
+    <a name="glossary"></a>
+    <dl>
+      <h3>Glossary</h3>
+      <dt>Population Centre</dt>
+      <dd>A built-up area used for census stats; different from a full metro area.</dd>
+
+      <dt>Land Area</dt>
+      <dd>Size of the centre’s land in square kilometres (km²).</dd>
+
+      <dt>Population Density</dt>
+      <dd>Residents per km² (population ÷ land area).</dd>
+
+      <dt>Change %</dt>
+      <dd>Percent change from 2016 to 2021 populations.</dd>
+
+      <dt>Core Column</dt>
+      <dd>The main column used for sorting/comparison (2021 Population here).</dd>
+    </dl>
+  </main>
+
+  <footer style="background:var(--panel); border-top:1px solid var(--border); border-radius:12px; padding:12px; margin-top:10px;">
+    <p style="margin:0; text-align:center;"> 2025 Caleb Newton Interactive comparison page</p>
+    <p style="margin:8px 0 0 0; font-size:10pt; background:#fffcef; border:1px solid #f6e8a7; border-left:6px solid #e1b800; padding:8px; border-radius:8px;">
+      <strong>AI Disclosure:</strong> I used ChatGPT to help (1) take the table layout from the previous assignment but replace it with Canadian data, 
+      (2) add simple class tags for the <em>3 densest</em> and <em>3 smallest-by-area</em> rows to save time for the walkthrough buttons, and 
+      (3) set up clearly named variables in the click handler so the sentence-style message is easier to read and maintain.
+    </p>
+  </footer>
+</div>
+
+<script>
+$(document).ready(function(){
+
+  $(".definition").hide();
+  $("th").on("click", function(){
+    $(this).children(".definition").fadeIn();
+  });
+  $("th").on("mouseout", function(){
+    $(this).children(".definition").fadeOut();
+  });
+
+  $("tbody").hide();
+  $("#more").on("click", function(){ $("tbody").toggle(); });
+
+  $("#canadaGrid tbody tr").on("mouseover", function(){
+    $(this).children().addClass("highlight");
+    $(this).children("td:nth-child(3)").addClass("highlight2");
+  });
+  $("#canadaGrid tbody tr").on("mouseout", function(){
+    $(this).children().removeClass("highlight");
+    $(this).children("td:nth-child(3)").removeClass("highlight2");
+  });
+
+  $("tr td:nth-child(1)").on("click", function(){
+    var name   = $(this).text();
+    var prov   = $(this).next().text();
+    var pop21  = $(this).next().next().text();
+    var pop16  = $(this).next().next().next().text();
+    var change = $(this).next().next().next().next().text();
+    var area   = $(this).next().next().next().next().next().text();
+    var dens   = $(this).next().next().next().next().next().next().text();
+
+    var msg  = "In " + name + " (" + prov + "), the 2021 population was " + pop21 + 
+               " (" + change + " from 2016’s " + pop16 + "). The built-up land area is " + area +
+               " km² with a density of " + dens + " people per km².";
+    $("#messagebox").html(msg);
+  });
+
+  $("dd").hide();
+  $("dt").on("mouseenter", function(){ $(this).next("dd").slideDown(); });
+  $("dt").on("mouseleave", function(){ $(this).next("dd").slideUp(); });
+
+  $("#btnDensest").on("click", function(){
+    $("#canadaGrid td").removeClass("highlight2");
+    $(".dense").children("td").addClass("highlight2");
+  });
+
+  $("#btnSmallestArea").on("click", function(){
+    $("#canadaGrid td").removeClass("highlight2");
+    $(".smallarea").children("td").addClass("highlight2");
+  });
+
+});
+</script>
+</body>
+</html>

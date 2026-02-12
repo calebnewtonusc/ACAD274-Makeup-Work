@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resources — Cities Data Mini‑Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f4f7fc; --panel:#fff; --ink:#0f2740; --muted:#5b6472;
+    --accent:#1e6b45; --accent-soft:#e6f5ed;
+    --border:#d8e2f0; --hl:#fff4c2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink)}
+  header, footer{background:var(--panel); border-bottom:1px solid var(--border)}
+  .wrap{max-width:980px; margin:0 auto; padding:18px}
+  h1{margin:0; font-size:28px; text-align:center}
+  h2{margin:0 0 8px}
+  p{margin:0 0 10px}
+  /* Top navigation */
+  .topnav{display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap}
+  .topnav a{padding:8px 12px; background:var(--panel); border:1px solid var(--border); border-radius:10px; color:var(--accent); text-decoration:none; font-weight:600}
+  .topnav a:hover{background:var(--accent-soft)}
+  /* Panels */
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px; margin:18px 0}
+  dl{margin:0}
+  dt{font-weight:700; margin-top:8px}
+  dd{margin:2px 0 8px 0; color:var(--muted)}
+  ul{margin:0; padding-left:18px}
+  footer small{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Resources</h1>
+    <nav class="topnav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="us-cities.html">U.S. Cities</a>
+      <a href="canadian-cities.html">Canadian Cities</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="panel">
+      <h2>Project References</h2>
+      <ul>
+        <li>U.S. Cities dataset, analysis, figures, and glossary are from the original <em>U.S. Cities by Population — Data &amp; Insights</em> assignment.</li>
+        <li>Canadian Population Centres table, walkthrough buttons, and glossary are from the original interactive comparison assignment.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Glossary (Consolidated)</h2>
+      <dl>
+        <dt>Incorporated place</dt>
+        <dd>A city/town/borough/municipality with its own local government; figures reflect residents within city limits.</dd>
+
+        <dt>Population estimate</dt>
+        <dd>An annual official count of residents used for inter‑year comparisons.</dd>
+
+        <dt>Population density</dt>
+        <dd>Residents per unit land area (per square mile for U.S.; per square kilometre for Canada).</dd>
+
+        <dt>Population Centre (Canada)</dt>
+        <dd>A built‑up area used for census statistics; distinct from a full metropolitan area.</dd>
+      </dl>
+    </section>
+
+    <section class="panel">
+  <h2>AI Use Disclosure</h2>
+  <p>I used ChatGPT to assist with this project in the following ways:</p>
+  <ul>
+    <li>Helped create a consistent navigation bar across all four pages based on the file names provided.</li>
+    <li>Synced and standardized the CSS styles so every page matched the design of the U.S. Cities page.</li>
+    <li>Consolidated overlapping glossary terms from the two assignments into a single combined glossary for the Resources page.</li>
+  </ul>
+</section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <small>Caleb Newton | Data Mini‑Site | 2025</small>
+  </div>
+</footer>
+</body>
+</html>

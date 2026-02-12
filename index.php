@@ -183,18 +183,18 @@
                 </div>
             </a>
 
-            <!-- Assignment 3: Animated Presentation -->
-            <a href="animated-presentation/" class="assignment-card">
+            <!-- Assignment 3: Mini Data Information Site -->
+            <a href="mini-site/" class="assignment-card">
                 <div class="assignment-number">3</div>
                 <span class="status-badge">✓ Complete</span>
-                <h2>Animated Presentation</h2>
-                <p class="due-date">Due: October 21, 2025</p>
-                <p>Data-driven presentation about city density with 5 slides featuring sophisticated jQuery animations and visual transitions.</p>
+                <h2>Mini Data Information Site</h2>
+                <p class="due-date">Due: September 30, 2025</p>
+                <p>Multi-page mini-website on cities data with navigation, featuring U.S. and Canadian city analysis, data tables, and resources.</p>
                 <div class="tech-stack">
-                    <span class="tech-badge">jQuery</span>
-                    <span class="tech-badge">JavaScript</span>
                     <span class="tech-badge">HTML</span>
                     <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">Navigation</span>
+                    <span class="tech-badge">Multi-page</span>
                 </div>
             </a>
         </div>

@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>U.S. Cities by Population — Data & Insights by Caleb Newton</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f4f7fc; --panel:#fff; --ink:#0f2740; --muted:#5b6472;
+    --accent:#1e6b45; --accent-soft:#e6f5ed;
+    --border:#d8e2f0; --hl:#fff4c2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink)}
+  header,footer{background:var(--panel); border-bottom:1px solid var(--border)}
+  .wrap{max-width:980px; margin:0 auto; padding:18px}
+  h1{margin:0; font-size:28px; text-align:center}
+  h2{margin:0 0 8px}
+  p{margin:0 0 10px}
+  .notice{background:var(--accent-soft); border-left:4px solid var(--accent); padding:10px 12px; color:var(--muted); border-radius:8px}
+  /* Top navigation */
+  .topnav{display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap}
+  .topnav a{padding:8px 12px; background:var(--panel); border:1px solid var(--border); border-radius:10px; color:var(--accent); text-decoration:none; font-weight:600}
+  .topnav a:hover{background:var(--accent-soft)}
+  /* Flex region */
+  nav.resources{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
+  nav.resources a{padding:8px 10px; background:var(--panel); border:1px solid var(--border); border-radius:8px; color:var(--accent); text-decoration:none}
+  nav.resources a:hover{text-decoration:underline}
+  /* Panels & grids */
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px; margin:18px 0}
+  .grid{display:flex; gap:16px; flex-wrap:wrap}
+  .card{flex:1 1 300px; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px}
+  .card h3{margin:0 0 8px}
+  /* Tables */
+  figure{margin:0}
+  figcaption{font-size:14px; color:var(--muted); margin-top:8px}
+  table{width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border)}
+  th,td{border:1px solid var(--border); padding:6px 8px; font-size:14px; text-align:left}
+  th{background:#f7fbff}
+  .mini th{background:#fff1c2}
+  tbody tr:nth-child(even){background:#fbfdff}
+  tbody tr:hover{background:#fff7e0}
+  .hl{background:var(--hl); border-radius:4px; padding:0 4px}
+  /* Images (top/bottom skylines) */
+  .skyline{width:100%; height:auto; border-radius:12px; border:1px solid var(--border); display:block}
+  /* Glossary */
+  .glossary dl{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px}
+  .glossary dt{font-weight:700; margin-top:8px}
+  .glossary dd{margin:2px 0 8px 0; color:var(--muted)}
+  /* Disclosure box */
+  .disclosure{background:#fffcef; border:1px solid #f6e8a7; border-left:6px solid #e1b800; border-radius:12px; padding:12px}
+  footer small{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>U.S. Cities by Population — Data & Insights by Caleb Newton</h1>
+
+    <nav class="topnav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="us-cities.html">U.S. Cities</a>
+      <a href="canadian-cities.html">Canadian Cities</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <!-- TOP GRAPHIC -->
+    <figure class="panel" style="margin-top:14px">
+      <img class="skyline" src="skyline1.jpg" alt="">
+      <figcaption>Figure A. Los Angeles City skyline.</figcaption>
+    </figure>
+
+    <p class="notice" style="margin-top:10px;">
+      Purpose: help a motivated reader explore the <strong>largest U.S. cities by population</strong> using a clear data grid,
+      then learn from two focused slices with short, practical explanations.
+    </p>
+    <nav class="resources" aria-label="Resources">
+      <a href="#dataset">Dataset</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="panel">
+      <h2>Focus & What’s on this Page</h2>
+      <p><strong>Data sub-genre:</strong> population of incorporated places (cities/towns/boroughs/municipalities) in the U.S.,
+         with land area and population density to support simple comparisons.</p>
+    </section>
+
+    <!-- ================== DATASET ================== -->
+    <section id="dataset" class="panel">
+      <h2>Core Dataset (Top 20 U.S. Cities)</h2>
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th>City</th><th>State</th><th>2024 Estimate</th><th>2020 Census</th><th>Change</th><th>Land Area (mi²)</th><th>Density (per mi²)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>New York</td><td>NY</td><td>8,478,072</td><td>8,804,190</td><td>−3.70%</td><td>300.5</td><td>29,298</td></tr>
+            <tr><td>Los Angeles</td><td>CA</td><td>3,878,704</td><td>3,898,747</td><td>−0.51%</td><td>469.5</td><td>8,304</td></tr>
+            <tr><td>Chicago</td><td>IL</td><td>2,721,308</td><td>2,746,388</td><td>−0.91%</td><td>227.7</td><td>12,061</td></tr>
+            <tr><td>Houston</td><td>TX</td><td>2,390,125</td><td>2,304,580</td><td>+3.71%</td><td>640.4</td><td>3,599</td></tr>
+            <tr><td>Phoenix</td><td>AZ</td><td>1,673,164</td><td>1,608,139</td><td>+4.04%</td><td>518.0</td><td>3,105</td></tr>
+            <tr><td>Philadelphia</td><td>PA</td><td>1,573,916</td><td>1,603,797</td><td>−1.86%</td><td>134.4</td><td>11,933</td></tr>
+            <tr><td>San Antonio</td><td>TX</td><td>1,526,656</td><td>1,434,625</td><td>+6.41%</td><td>498.8</td><td>2,876</td></tr>
+            <tr><td>San Diego</td><td>CA</td><td>1,384,482</td><td>1,386,932</td><td>−0.18%</td><td>325.9</td><td>4,234</td></tr>
+            <tr><td>Dallas</td><td>TX</td><td>1,299,544</td><td>1,304,379</td><td>−0.37%</td><td>339.8</td><td>3,638</td></tr>
+            <tr><td>San Jose</td><td>CA</td><td>971,233</td><td>1,013,240</td><td>−4.19%</td><td>176.6</td><td>5,360</td></tr>
+            <tr><td>Austin</td><td>TX</td><td>969,207</td><td>961,855</td><td>+0.76%</td><td>305.1</td><td>3,233</td></tr>
+            <tr><td>Jacksonville</td><td>FL</td><td>1,009,833</td><td>949,611</td><td>+6.35%</td><td>747.3</td><td>1,271</td></tr>
+            <tr><td>Fort Worth</td><td>TX</td><td>979,212</td><td>918,915</td><td>+6.56%</td><td>351.6</td><td>2,693</td></tr>
+            <tr><td>Columbus</td><td>OH</td><td>909,350</td><td>905,748</td><td>+0.40%</td><td>217.2</td><td>4,183</td></tr>
+            <tr><td>Charlotte</td><td>NC</td><td>916,643</td><td>874,579</td><td>+4.81%</td><td>308.6</td><td>2,857</td></tr>
+            <tr><td>San Francisco</td><td>CA</td><td>827,526</td><td>873,965</td><td>−5.32%</td><td>46.9</td><td>18,635</td></tr>
+            <tr><td>Indianapolis</td><td>IN</td><td>870,431</td><td>887,642</td><td>−1.94%</td><td>361.6</td><td>2,406</td></tr>
+            <tr><td>Seattle</td><td>WA</td><td>780,995</td><td>737,015</td><td>+5.98%</td><td>83.8</td><td>8,795</td></tr>
+            <tr><td>Denver</td><td>CO</td><td>718,679</td><td>715,522</td><td>+0.44%</td><td>153.1</td><td>4,609</td></tr>
+            <tr><td>Washington</td><td>DC</td><td>671,803</td><td>689,545</td><td>−2.75%</td><td>61.1</td><td>10,988</td></tr>
+          </tbody>
+        </table>
+        <figcaption><strong>Figure 1.</strong> U.S. incorporated places (≥100,000 population) — selected top 20 with land area and density.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================== ANALYSIS ================== -->
+    <section id="analysis" class="grid" aria-label="Focused slices + explanation">
+      <div class="card">
+        <h3>Slice A — Most Dense (Top 5 here)</h3>
+        <p>Compact cities among the largest by population.</p>
+        <table class="mini">
+          <thead><tr><th>City, State</th><th>Density (per mi²)</th><th>Land Area (mi²)</th></tr></thead>
+          <tbody>
+            <tr><td>New York, NY</td><td>29,298</td><td>300.5</td></tr>
+            <tr><td>San Francisco, CA</td><td>18,635</td><td>46.9</td></tr>
+            <tr><td>Chicago, IL</td><td>12,061</td><td>227.7</td></tr>
+            <tr><td>Philadelphia, PA</td><td>11,933</td><td>134.4</td></tr>
+            <tr><td>Washington, DC</td><td>10,988</td><td>61.1</td></tr>
+          </tbody>
+        </table>
+        <p><span class="hl">What stands out:</span> these cities combine large populations with relatively small land areas (especially San Francisco and Washington), driving density far above most peers. In practice, that tends to correlate with high transit demand, vertical housing, and tighter land-use constraints.</p>
+        <p><span class="hl">Compare to the main table:</span> cities like Los Angeles and Houston have huge populations but also very large land areas, which keeps density much lower. That structural difference helps explain why “big city” problems look different in New York vs. Los Angeles (subway vs. freeway cultures, infill vs. greenfield growth).</p>
+        <p><span class="hl">User takeaway:</span> if your question is “Which large U.S. cities feel most urban/compact?”, start with this subset, then cross-reference their land areas in Figure 1 to contextualize why their density is so high.</p>
+      </div>
+
+      <div class="card">
+        <h3>Slice B — Largest by Land Area (Top 5 here)</h3>
+        <p>Spread-out cities with big footprints.</p>
+        <table class="mini">
+          <thead><tr><th>City, State</th><th>Land Area (mi²)</th><th>Density (per mi²)</th></tr></thead>
+          <tbody>
+            <tr><td>Jacksonville, FL</td><td>747.3</td><td>1,271</td></tr>
+            <tr><td>Houston, TX</td><td>640.4</td><td>3,599</td></tr>
+            <tr><td>Phoenix, AZ</td><td>518.0</td><td>3,105</td></tr>
+            <tr><td>San Antonio, TX</td><td>498.8</td><td>2,876</td></tr>
+            <tr><td>Dallas, TX</td><td>339.8</td><td>3,638</td></tr>
+          </tbody>
+        </table>
+        <p><span class="hl">What stands out:</span> Jacksonville’s municipal boundary covers an exceptionally large area, keeping density low even as the population tops a million. Houston and Dallas also sprawl across hundreds of square miles, balancing sizable populations with car-oriented infrastructure.</p>
+        <p><span class="hl">Compare to compact peers:</span> San Francisco’s dense footprint (only 46.9 mi²) concentrates people, jobs, and services, while cities in this slice distribute growth across a wider land base. That tends to increase average trip distances and road capacity needs, and it changes how parks, schools, and emergency services are sited.</p>
+        <p><span class="hl">User takeaway:</span> if your question is “Which large U.S. cities are most spread out?”, this slice is a quick answer. Use Figure 1 to pull additional examples (e.g., Oklahoma City at 606.2 mi²) and explain how footprint size shapes density and everyday travel.</p>
+      </div>
+    </section>
+
+    <!-- ================== GLOSSARY ================== -->
+    <section id="glossary" class="glossary panel">
+      <h2>Glossary</h2>
+      <dl>
+        <dt>Incorporated place</dt>
+        <dd>A city/town/borough/municipality with its own local government; figures reflect residents within city limits.</dd>
+
+        <dt>Consolidated city–county</dt>
+        <dd>A combined jurisdiction of a city and county; counts can exclude portions inside other incorporated places.</dd>
+
+        <dt>City limits</dt>
+        <dd>The boundary of a municipality; rankings here refer to populations <em>within</em> those limits (not metro totals).</dd>
+
+        <dt>Population estimate</dt>
+        <dd>An annual official count of residents used for inter-year comparisons.</dd>
+
+        <dt>Population density</dt>
+        <dd>Residents per square mile; calculated as population divided by land area.</dd>
+      </dl>
+    </section>
+
+    <!-- BOTTOM GRAPHIC -->
+    <figure class="panel" style="margin-top:6px">
+      <img class="skyline" src="skyline2.jpg" alt="">
+      <figcaption>Figure B. New York City skyline.</figcaption>
+    </figure>
+
+    <!-- AI USE DISCLOSURE -->
+    <section class="panel disclosure" style="margin-top:12px">
+      <h2 style="margin-top:0">AI Use Disclosure</h2>
+      <p><strong>Note:</strong> I used ChatGPT to assist with this assignment in the following ways:</p>
+      <ul>
+        <li>Suggested a <em>color palette</em> and accent color to improve readability and consistency.</li>
+        <li>Helped <em>generate the HTML table</em> after I struggled with the conversion tool.</li>
+        <li>Provided guidance to <em>clean up spacing &amp; sizing</em> (CSS organization and minor layout tweaks).</li>
+      </ul>
+      <p>This disclosure is provided per professor Dent's reminder to include notes about any AI use in assignment work.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <small>Caleb Newton | Data Table Assignment | 2025</small>
+  </div>
+</footer>
+
+</body>
+</html>

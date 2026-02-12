@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cities Data Mini‑Site — Overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f4f7fc; --panel:#fff; --ink:#0f2740; --muted:#5b6472;
+    --accent:#1e6b45; --accent-soft:#e6f5ed;
+    --border:#d8e2f0; --hl:#fff4c2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink)}
+  header, footer{background:var(--panel); border-bottom:1px solid var(--border)}
+  .wrap{max-width:980px; margin:0 auto; padding:18px}
+  h1{margin:0; font-size:28px; text-align:center}
+  h2{margin:0 0 8px}
+  p{margin:0 0 10px}
+  /* Top navigation */
+  .topnav{display:flex; gap:14px; justify-content:center; margin-top:10px; flex-wrap:wrap}
+  .topnav a{padding:8px 12px; background:var(--panel); border:1px solid var(--border); border-radius:10px; color:var(--accent); text-decoration:none; font-weight:600}
+  .topnav a:hover{background:var(--accent-soft)}
+  /* Panels & cards */
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px; margin:18px 0}
+  .grid{display:flex; gap:16px; flex-wrap:wrap}
+  .card{flex:1 1 300px; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px}
+  footer small{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Cities Data Mini‑Site</h1>
+    <nav class="topnav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="us-cities.html">U.S. Cities</a>
+      <a href="canadian-cities.html">Canadian Cities</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="panel">
+      <h2>Overview</h2>
+      <p>This small website brings together your two previous assignments into one place: a data table of major <strong>U.S. cities</strong> and an interactive page of <strong>Canadian population centres</strong>. The design, colors, and layout follow the U.S. Cities page for consistency.</p>
+    </section>
+
+    <section class="grid" aria-label="Quick links">
+      <div class="card">
+        <h3>U.S. Cities by Population</h3>
+        <p>Explore the core dataset (top 20), two focused slices, a glossary, and figures. Content is preserved exactly as in your assignment.</p>
+        <p><a href="us-cities.html">Open U.S. Cities →</a></p>
+      </div>
+      <div class="card">
+        <h3>Canadian Population Centres (Interactive)</h3>
+        <p>Hover to highlight rows, click a city name to build a summary, and use the two walkthrough buttons. Content and behavior are unchanged.</p>
+        <p><a href="canadian-cities.html">Open Canadian Cities →</a></p>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <p>Glossary, references, and the AI-use note moved into a single page to complete the mini‑site structure.</p>
+        <p><a href="resources.html">Go to Resources →</a></p>
+      </div>
+    </section>
+
+    <section class="panel">
+  <h2>AI Use Disclosure</h2>
+  <p>I used ChatGPT to assist with this project in the following ways:</p>
+  <ul>
+    <li>Helped create a consistent navigation bar across all four pages based on the file names provided.</li>
+    <li>Synced and standardized the CSS styles so every page matched the design of the U.S. Cities page.</li>
+    <li>Consolidated overlapping glossary terms from the two assignments into a single combined glossary for the Resources page.</li>
+  </ul>
+</section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <small>Caleb Newton | Data Mini‑Site | 2025</small>
+  </div>
+</footer>
+</body>
+</html>
