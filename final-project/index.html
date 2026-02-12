@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project: LA Healthcare Access Mapping | ACAD 274</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero .subtitle {
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .live-demo-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .live-demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .stat-card .label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .content-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-section li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .tech-badge {
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .screenshot {
+            width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to All Assignments</a>
+
+        <div class="hero">
+            <h1>🏥 LA Healthcare Access Mapping</h1>
+            <p class="subtitle">
+                Production-ready data science platform analyzing healthcare access gaps across
+                Los Angeles County to identify underserved communities and inform evidence-based policy decisions.
+            </p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/" target="_blank" class="live-demo-btn">
+                🚀 View Live Dashboard →
+            </a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">4,512</div>
+                <div class="label">Healthcare Facilities Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">9.9M</div>
+                <div class="label">LA County Residents Served</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">2,498</div>
+                <div class="label">Census Tracts Covered</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">7</div>
+                <div class="label">RESTful API Endpoints</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>📊 Project Overview</h2>
+            <p>
+                This full-stack web application addresses a critical public health question: <strong>Where are the healthcare
+                access gaps in Los Angeles County, and how can we optimize facility placement to serve underserved communities?</strong>
+            </p>
+            <p>
+                Using advanced geospatial analysis and interactive data visualizations, this platform provides actionable
+                insights for policymakers, healthcare administrators, and community advocates.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>🎯 Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🗺️ Interactive Maps</h3>
+                    <p>Geospatial visualizations showing facility distribution, access deserts, and priority areas using KD-tree algorithms for nearest-neighbor analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📈 Data Visualizations</h3>
+                    <p>Regional breakdowns, impact comparisons, priority matrices, and comprehensive charts showing healthcare access metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💡 Policy Recommendations</h3>
+                    <p>Evidence-based interventions with financial analysis, implementation timelines, and 540% ROI projections.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 RESTful API</h3>
+                    <p>7 FastAPI endpoints providing programmatic access to facility data, census tracts, and analysis results.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Glassmorphic UI with mobile navigation, Framer Motion animations, and modern UX patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Auto-Updating</h3>
+                    <p>Monthly data refresh via GitHub Actions automation ensuring current healthcare facility information.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🛠️ Technology Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js 16</span>
+                <span class="tech-badge">React 19</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">Python 3.13</span>
+                <span class="tech-badge">GeoPandas</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Framer Motion</span>
+                <span class="tech-badge">Vercel</span>
+                <span class="tech-badge">Railway</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Tailwind CSS</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🎓 ACAD 274 Requirements Met</h2>
+            <ul>
+                <li><strong>Data Focus:</strong> Healthcare access gaps analysis addressing underserved communities</li>
+                <li><strong>Data Research:</strong> Comprehensive dataset of 4,512 validated healthcare facilities across LA County</li>
+                <li><strong>Database & Queries:</strong> FastAPI backend with PostgreSQL, 7 RESTful endpoints for data access</li>
+                <li><strong>Interactive Visualizations:</strong> Geographic maps, heatmaps, charts, priority matrices, regional breakdowns</li>
+                <li><strong>Multi-page Website:</strong> 6 comprehensive sections with navigation (Home, Analysis, Recommendations, Methodology, Data/API, Resources)</li>
+                <li><strong>Professional Design:</strong> Modern glassmorphic UI, mobile-responsive, Framer Motion animations</li>
+                <li><strong>Real-World Impact:</strong> Evidence-based policy recommendations supporting 3M+ underserved residents</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>🌐 Dashboard Sections</h2>
+            <p>The live application features 6 comprehensive sections:</p>
+            <ul>
+                <li><strong>Home:</strong> Executive summary with key findings, quick stats, and navigation hub</li>
+                <li><strong>Analysis:</strong> Complete data visualizations including regional breakdowns, impact comparisons, and interactive maps</li>
+                <li><strong>Recommendations:</strong> Policy content with financial analysis, implementation timelines, and ROI breakdowns</li>
+                <li><strong>Methodology:</strong> Technical documentation covering algorithms, KD-tree implementation, and CRS transformations</li>
+                <li><strong>Data & API:</strong> Complete data dictionary with 7 live RESTful API endpoints and integration guides</li>
+                <li><strong>Resources:</strong> 20+ curated external tools, HPSA/MUA finders, and facility locators</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>📁 Project Links</h2>
+            <p><strong>Live Dashboard:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/" target="_blank" style="color: #667eea; font-weight: 600;">https://la-healthcare-access-mapping.vercel.app/</a></p>
+            <p><strong>GitHub Repository:</strong> Available upon request</p>
+            <p><strong>API Documentation:</strong> Available at <a href="https://la-healthcare-access-mapping.vercel.app/data" target="_blank" style="color: #667eea; font-weight: 600;">/data</a> section</p>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <a href="https://la-healthcare-access-mapping.vercel.app/" target="_blank" class="live-demo-btn">
+                🚀 Explore the Full Dashboard →
+            </a>
+        </div>
+    </div>
+</body>
+</html>

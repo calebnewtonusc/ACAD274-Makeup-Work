@@ -212,6 +212,25 @@
                     <span class="tech-badge">Multi-page</span>
                 </div>
             </a>
+
+            <!-- Final Project: LA Healthcare Access Mapping -->
+            <a href="final-project/" class="assignment-card" style="grid-column: 1 / -1;">
+                <div class="assignment-number">🏆</div>
+                <span class="status-badge">✓ Complete</span>
+                <h2>Final Project: LA Healthcare Access Mapping</h2>
+                <p class="due-date">Group Project | Fall 2025</p>
+                <p>Production-ready full-stack platform analyzing healthcare access gaps across LA County. Features interactive maps, geospatial analysis, RESTful API, and evidence-based policy recommendations serving 9.9M residents.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">Next.js 16</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">GeoPandas</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Interactive Maps</span>
+                    <span class="tech-badge">Data Viz</span>
+                    <span class="tech-badge">RESTful API</span>
+                </div>
+            </a>
         </div>
 
         <footer>
