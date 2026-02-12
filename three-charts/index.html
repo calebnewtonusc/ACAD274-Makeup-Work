@@ -6,209 +6,93 @@
     <title>Three Core Charts | ACAD 274</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        .container { max-width: 1100px; margin: 0 auto; }
-        .back-link {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-        .hero h1 { color: #333; font-size: 2.2rem; margin-bottom: 15px; }
-        .chart-section {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .chart-section h2 {
-            color: #333;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            border-left: 5px solid #667eea;
-            padding-left: 15px;
-        }
-        .chart-section p { color: #666; line-height: 1.7; margin-bottom: 15px; }
-        .chart-visual {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        .stats-row {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        .stat {
-            text-align: center;
-            padding: 15px;
-        }
-        .stat .num {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-        .stat .label {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-        .tech-badge {
-            display: inline-block;
-            background: #f0f0f0;
-            color: #667eea;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 4px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px 20px; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back { color: #60a5fa; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 40px; }
+        .section { background: #1e293b; border-radius: 12px; padding: 32px; margin-bottom: 32px; border: 1px solid #334155; }
+        .section h2 { color: #f1f5f9; margin-bottom: 16px; }
+        .section p { color: #cbd5e1; margin-bottom: 12px; }
+        .viz-link { display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 16px; }
+        .viz-link:hover { background: #2563eb; }
+        ul { margin: 16px 0; padding-left: 24px; }
+        ul li { margin: 8px 0; color: #cbd5e1; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat { background: #0f172a; padding: 16px; border-radius: 8px; text-align: center; }
+        .stat .num { font-size: 2rem; font-weight: bold; color: #60a5fa; }
+        .stat .label { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="../" class="back-link">← Back to All Assignments</a>
+        <a href="../" class="back">← Back</a>
 
-        <div class="hero">
-            <h1>📈 Three Core Charts Analysis</h1>
-            <p>
-                Three essential data visualizations that form the analytical foundation of the
-                LA Healthcare Access Mapping project. Each chart addresses a critical research question
-                about healthcare equity and resource distribution.
-            </p>
-        </div>
+        <h1>Three Core Charts Analysis</h1>
+        <p class="subtitle">From LA Healthcare Access Mapping Project</p>
 
-        <!-- Chart 1: Facility Density by Region -->
-        <div class="chart-section">
+        <div class="section">
             <h2>Chart 1: Healthcare Facility Density by Region</h2>
-            <p>
-                <strong>Research Question:</strong> How does healthcare facility density vary across
-                different regions of LA County?
-            </p>
-            <p>
-                <strong>Chart Type:</strong> Grouped Bar Chart with Population Overlay
-            </p>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#regional-breakdown" target="_blank" style="color: #60a5fa;">Analysis Dashboard → Regional Breakdown</a></p>
 
-            <div class="chart-visual">
-                <div style="text-align: center; margin-bottom: 20px; color: #666; font-weight: 600;">
-                    Facilities per 10,000 Residents by Region
+            <p><strong>Research Question:</strong> How does healthcare facility density vary across different regions of LA County?</p>
+
+            <p><strong>Chart Type:</strong> Interactive Grouped Bar Chart with Population Overlay</p>
+
+            <p><strong>Implementation:</strong></p>
+            <ul>
+                <li>Built with Chart.js and D3.js for smooth animations and interactivity</li>
+                <li>Shows facilities per 10,000 residents across 5 major regions</li>
+                <li>Includes absolute facility counts and per-capita normalized rates</li>
+                <li>Hover tooltips display detailed statistics for each region</li>
+                <li>Color-coded to highlight disparities (green for adequate, red for underserved)</li>
+            </ul>
+
+            <div class="stat-grid">
+                <div class="stat">
+                    <div class="num">7.8</div>
+                    <div class="label">West LA (per 10K)</div>
                 </div>
-                <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 280px; margin-bottom: 15px;">
-                    <div style="text-align: center;">
-                        <div style="background: linear-gradient(to top, #667eea, #764ba2); width: 80px; height: 75%; border-radius: 8px 8px 0 0; margin: 0 auto;"></div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #333; font-weight: 600;">7.8</div>
-                        <div style="margin-top: 5px; font-size: 0.85rem; color: #666;">West LA</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="background: linear-gradient(to top, #667eea, #764ba2); width: 80px; height: 50%; border-radius: 8px 8px 0 0; margin: 0 auto;"></div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #333; font-weight: 600;">5.2</div>
-                        <div style="margin-top: 5px; font-size: 0.85rem; color: #666;">Central LA</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="background: linear-gradient(to top, #667eea, #764ba2); width: 80px; height: 25%; border-radius: 8px 8px 0 0; margin: 0 auto;"></div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #333; font-weight: 600;">2.3</div>
-                        <div style="margin-top: 5px; font-size: 0.85rem; color: #666;">South LA</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="background: linear-gradient(to top, #667eea, #764ba2); width: 80px; height: 22%; border-radius: 8px 8px 0 0; margin: 0 auto;"></div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #333; font-weight: 600;">2.1</div>
-                        <div style="margin-top: 5px; font-size: 0.85rem; color: #666;">East LA</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="background: linear-gradient(to top, #667eea, #764ba2); width: 80px; height: 45%; border-radius: 8px 8px 0 0; margin: 0 auto;"></div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #333; font-weight: 600;">4.5</div>
-                        <div style="margin-top: 5px; font-size: 0.85rem; color: #666;">County Avg</div>
-                    </div>
+                <div class="stat">
+                    <div class="num">5.2</div>
+                    <div class="label">Central LA (per 10K)</div>
                 </div>
-            </div>
-
-            <p><strong>Key Insight:</strong> West LA has 3.7x higher facility density than South/East LA, revealing significant geographic inequity. This disparity persists even when controlling for population density.</p>
-
-            <div class="stats-row">
+                <div class="stat">
+                    <div class="num">2.1</div>
+                    <div class="label">East LA (per 10K)</div>
+                </div>
                 <div class="stat">
                     <div class="num">3.7x</div>
                     <div class="label">Density Gap</div>
                 </div>
-                <div class="stat">
-                    <div class="num">2.8M</div>
-                    <div class="label">Underserved Residents</div>
-                </div>
-                <div class="stat">
-                    <div class="num">45%</div>
-                    <div class="label">Below County Average</div>
-                </div>
             </div>
 
-            <div>
-                <span class="tech-badge">Chart.js</span>
-                <span class="tech-badge">D3.js</span>
-                <span class="tech-badge">Python Pandas</span>
-            </div>
+            <p><strong>Key Insight:</strong> West LA has 3.7x higher facility density than South/East LA, revealing significant geographic inequity that persists even when controlling for population density.</p>
+
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Interactive Chart →</a>
         </div>
 
-        <!-- Chart 2: Access Distance Distribution -->
-        <div class="chart-section">
+        <div class="section">
             <h2>Chart 2: Distance to Nearest Facility Distribution</h2>
-            <p>
-                <strong>Research Question:</strong> What percentage of LA County residents live within
-                reasonable distance to healthcare facilities?
-            </p>
-            <p>
-                <strong>Chart Type:</strong> Histogram with Cumulative Distribution Overlay
-            </p>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#distance-distribution" target="_blank" style="color: #60a5fa;">Analysis Dashboard → Distance Analysis</a></p>
 
-            <div class="chart-visual">
-                <div style="text-align: center; margin-bottom: 20px; color: #666; font-weight: 600;">
-                    Population Distribution by Distance to Nearest Facility
-                </div>
-                <div style="background: white; padding: 25px; border-radius: 8px;">
-                    <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 200px; gap: 8px;">
-                        <div style="flex: 1; background: #4ade80; height: 85%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #4ade80; height: 70%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #4ade80; height: 55%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #fbbf24; height: 35%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #fbbf24; height: 25%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #ef4444; height: 15%; border-radius: 4px 4px 0 0;"></div>
-                        <div style="flex: 1; background: #ef4444; height: 8%; border-radius: 4px 4px 0 0;"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.75rem; color: #666;">
-                        <span>0-0.3km</span>
-                        <span>0.3-0.6km</span>
-                        <span>0.6-0.9km</span>
-                        <span>0.9-1.2km</span>
-                        <span>1.2-1.5km</span>
-                        <span>1.5-2.0km</span>
-                        <span>>2.0km</span>
-                    </div>
-                    <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: #666;">
-                        <span style="color: #4ade80;">● Good Access</span> &nbsp;&nbsp;
-                        <span style="color: #fbbf24;">● Moderate Access</span> &nbsp;&nbsp;
-                        <span style="color: #ef4444;">● Limited Access</span>
-                    </div>
-                </div>
-            </div>
+            <p><strong>Research Question:</strong> What percentage of LA County residents live within reasonable distance to healthcare facilities?</p>
 
-            <p><strong>Key Insight:</strong> 92% of residents live within 1.5km of a facility, but 80,831 people (0.8%) face significant access barriers with >2km average distance, concentrated in specific census tracts.</p>
+            <p><strong>Chart Type:</strong> Histogram with Cumulative Distribution Function Overlay</p>
 
-            <div class="stats-row">
+            <p><strong>Implementation:</strong></p>
+            <ul>
+                <li>Generated with Matplotlib and Seaborn for statistical visualization</li>
+                <li>Shows population distribution across distance bins (0-0.5km, 0.5-1km, etc.)</li>
+                <li>Cumulative distribution line overlay shows percentage with access</li>
+                <li>Color gradient from green (good access) to red (poor access)</li>
+                <li>KD-tree algorithm used to calculate nearest facility distances</li>
+            </ul>
+
+            <div class="stat-grid">
                 <div class="stat">
-                    <div class="num">0.88 km</div>
+                    <div class="num">0.88km</div>
                     <div class="label">County Average</div>
                 </div>
                 <div class="stat">
@@ -216,92 +100,61 @@
                     <div class="label">Within 1.5km</div>
                 </div>
                 <div class="stat">
-                    <div class="num">80K</div>
-                    <div class="label">Access Desert Residents</div>
+                    <div class="num">80,831</div>
+                    <div class="label">In Access Deserts</div>
                 </div>
             </div>
 
-            <div>
-                <span class="tech-badge">Matplotlib</span>
-                <span class="tech-badge">Seaborn</span>
-                <span class="tech-badge">NumPy</span>
-            </div>
+            <p><strong>Key Insight:</strong> While 92% of residents live within 1.5km of a facility, 80,831 people (0.8%) face significant access barriers with >2km average distance, concentrated in specific census tracts.</p>
+
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Interactive Histogram →</a>
         </div>
 
-        <!-- Chart 3: Socioeconomic Impact Analysis -->
-        <div class="chart-section">
+        <div class="section">
             <h2>Chart 3: Healthcare Access vs. Socioeconomic Indicators</h2>
-            <p>
-                <strong>Research Question:</strong> How does healthcare access correlate with
-                socioeconomic factors like income and insurance coverage?
-            </p>
-            <p>
-                <strong>Chart Type:</strong> Multi-axis Scatter Plot with Regression Lines
-            </p>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#socioeconomic" target="_blank" style="color: #60a5fa;">Analysis Dashboard → Socioeconomic Analysis</a></p>
 
-            <div class="chart-visual">
-                <div style="text-align: center; margin-bottom: 20px; color: #666; font-weight: 600;">
-                    Facility Density vs. Median Household Income by Census Tract
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 8px; position: relative; height: 300px;">
-                    <!-- Scatter plot simulation -->
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #667eea; left: 15%; top: 70%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #667eea; left: 20%; top: 65%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #764ba2; left: 25%; top: 55%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #764ba2; left: 35%; top: 50%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #667eea; left: 40%; top: 45%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #764ba2; left: 50%; top: 38%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #667eea; left: 60%; top: 30%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #764ba2; left: 70%; top: 22%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #667eea; left: 75%; top: 18%; opacity: 0.7;"></div>
-                    <div style="position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #764ba2; left: 85%; top: 12%; opacity: 0.7;"></div>
+            <p><strong>Research Question:</strong> How does healthcare access correlate with socioeconomic factors like income and insurance coverage?</p>
 
-                    <!-- Trend line -->
-                    <div style="position: absolute; width: 90%; height: 2px; background: linear-gradient(to right, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4)); left: 5%; top: 50%; transform: rotate(-25deg); transform-origin: left center;"></div>
+            <p><strong>Chart Type:</strong> Multi-axis Interactive Scatter Plot with Regression Lines</p>
 
-                    <!-- Axes labels -->
-                    <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); font-size: 0.85rem; color: #666;">Median Household Income →</div>
-                    <div style="position: absolute; left: 5px; top: 50%; transform: rotate(-90deg); transform-origin: left center; font-size: 0.85rem; color: #666;">Facility Density →</div>
-                </div>
-                <div style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #666;">
-                    <strong>Correlation coefficient: r = 0.72 (p < 0.001)</strong>
-                </div>
-            </div>
+            <p><strong>Implementation:</strong></p>
+            <ul>
+                <li>Built with Plotly for advanced interactivity (zoom, pan, hover)</li>
+                <li>Each point represents a census tract with color-coded priority level</li>
+                <li>X-axis: Median household income | Y-axis: Facility density per capita</li>
+                <li>Linear regression line shows strong positive correlation</li>
+                <li>Statistical analysis with SciPy and Statsmodels (correlation coefficient, p-value)</li>
+            </ul>
 
-            <p><strong>Key Insight:</strong> Strong positive correlation (r=0.72) between median income and facility density. Lower-income areas systematically underserved, suggesting structural inequities in healthcare resource allocation.</p>
-
-            <div class="stats-row">
+            <div class="stat-grid">
                 <div class="stat">
-                    <div class="num">0.72</div>
+                    <div class="num">r = 0.72</div>
                     <div class="label">Correlation Coefficient</div>
                 </div>
                 <div class="stat">
+                    <div class="num">p < 0.001</div>
+                    <div class="label">Statistical Significance</div>
+                </div>
+                <div class="stat">
                     <div class="num">$45K</div>
-                    <div class="label">Underserved Area Avg Income</div>
+                    <div class="label">Underserved Avg Income</div>
                 </div>
                 <div class="stat">
                     <div class="num">$95K</div>
-                    <div class="label">Well-Served Area Avg Income</div>
+                    <div class="label">Well-Served Avg Income</div>
                 </div>
             </div>
 
-            <div>
-                <span class="tech-badge">Plotly</span>
-                <span class="tech-badge">SciPy</span>
-                <span class="tech-badge">Statsmodels</span>
-            </div>
+            <p><strong>Key Insight:</strong> Strong positive correlation (r=0.72, p<0.001) between median income and facility density. Lower-income areas systematically underserved, suggesting structural inequities in healthcare resource allocation.</p>
+
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Interactive Scatter Plot →</a>
         </div>
 
-        <div class="hero">
-            <h2 style="color: #333; font-size: 1.6rem; margin-bottom: 15px;">🔗 Interactive Charts</h2>
-            <p>
-                All three charts are available in interactive form on the project dashboard with hover tooltips,
-                zoom capabilities, and real-time data filtering.
-            </p>
-            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank"
-               style="display: inline-block; margin-top: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 25px; text-decoration: none; font-weight: 600;">
-                View Interactive Dashboard →
-            </a>
+        <div class="section">
+            <h2>View All Charts on Live Dashboard</h2>
+            <p>All three core charts are integrated into the full analysis dashboard with complete interactivity, real-time data filtering, and detailed statistical methodology.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">Go to Full Analysis Dashboard →</a>
         </div>
     </div>
 </body>

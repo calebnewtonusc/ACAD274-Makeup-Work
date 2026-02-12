@@ -6,183 +6,95 @@
     <title>Individual Data Visualizations | ACAD 274</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        .container { max-width: 1100px; margin: 0 auto; }
-        .back-link {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-        .hero h1 { color: #333; font-size: 2.2rem; margin-bottom: 15px; }
-        .hero p { color: #666; line-height: 1.7; margin-bottom: 15px; }
-        .viz-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .viz-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .viz-card h3 { color: #333; font-size: 1.4rem; margin-bottom: 12px; }
-        .viz-card p { color: #666; line-height: 1.6; margin-bottom: 15px; }
-        .viz-card img { width: 100%; border-radius: 10px; margin: 15px 0; }
-        .tech-badge {
-            display: inline-block;
-            background: #f0f0f0;
-            color: #667eea;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 4px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px 20px; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back { color: #60a5fa; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 40px; }
+        .section { background: #1e293b; border-radius: 12px; padding: 32px; margin-bottom: 32px; border: 1px solid #334155; }
+        .section h2 { color: #f1f5f9; margin-bottom: 16px; }
+        .section p { color: #cbd5e1; margin-bottom: 12px; }
+        .viz-link { display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 16px; }
+        .viz-link:hover { background: #2563eb; }
+        .screenshot { width: 100%; border-radius: 8px; margin: 20px 0; border: 1px solid #334155; }
+        ul { margin: 16px 0; padding-left: 24px; }
+        ul li { margin: 8px 0; color: #cbd5e1; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="../" class="back-link">← Back to All Assignments</a>
+        <a href="../" class="back">← Back</a>
 
-        <div class="hero">
-            <h1>📊 Individual Data Visualizations</h1>
-            <p>
-                Custom data visualizations created for the LA Healthcare Access Mapping project.
-                Each visualization addresses specific research questions about healthcare accessibility,
-                facility distribution, and underserved communities.
-            </p>
-            <p>
-                <strong>Data Source:</strong> 4,512 healthcare facilities across 2,498 census tracts in LA County
-            </p>
+        <h1>Individual Data Visualizations</h1>
+        <p class="subtitle">From LA Healthcare Access Mapping Project</p>
+
+        <div class="section">
+            <h2>Project Context</h2>
+            <p>These visualizations were created for the LA Healthcare Access Mapping project, analyzing 4,512 healthcare facilities across 2,498 census tracts in LA County serving 9.9 million residents.</p>
+            <p>Each visualization addresses specific research questions about healthcare accessibility, facility distribution, and underserved communities.</p>
         </div>
 
-        <div class="viz-grid">
-            <div class="viz-card">
-                <h3>1. Geographic Facility Distribution Map</h3>
-                <p>
-                    Interactive choropleth map showing healthcare facility density across LA County census tracts.
-                    Color intensity represents facilities per capita, revealing geographic disparities.
-                </p>
-                <div style="background: #f5f5f5; padding: 40px; border-radius: 10px; text-align: center; color: #999;">
-                    [Interactive Map - Leaflet/Mapbox]<br>
-                    Facilities per 10,000 residents by census tract<br>
-                    Live on dashboard
-                </div>
-                <p style="margin-top: 15px; font-size: 0.95rem;">
-                    <strong>Key Finding:</strong> South LA and East LA show significantly lower facility density (2.1 per 10K)
-                    compared to West LA (7.8 per 10K).
-                </p>
-                <div>
-                    <span class="tech-badge">GeoPandas</span>
-                    <span class="tech-badge">Leaflet.js</span>
-                    <span class="tech-badge">GeoJSON</span>
-                </div>
-            </div>
-
-            <div class="viz-card">
-                <h3>2. Access Distance Heatmap</h3>
-                <p>
-                    Heatmap visualization showing average distance to nearest healthcare facility by census tract.
-                    Darker colors indicate longer travel distances (access deserts).
-                </p>
-                <div style="background: linear-gradient(to bottom, #4ade80, #fbbf24, #ef4444); padding: 60px; border-radius: 10px; text-align: center; color: white; font-weight: bold;">
-                    Distance Gradient<br>
-                    0.2km → 0.88km → 2.5km<br>
-                    (Green → Yellow → Red)
-                </div>
-                <p style="margin-top: 15px; font-size: 0.95rem;">
-                    <strong>Key Finding:</strong> 80,831 residents live in census tracts with >1.5km average distance to facilities.
-                </p>
-                <div>
-                    <span class="tech-badge">Matplotlib</span>
-                    <span class="tech-badge">Seaborn</span>
-                    <span class="tech-badge">KD-Tree Algorithm</span>
-                </div>
-            </div>
-
-            <div class="viz-card">
-                <h3>3. Regional Facility Count Comparison</h3>
-                <p>
-                    Bar chart comparing total healthcare facilities across LA County regions.
-                    Shows stark disparities in resource distribution.
-                </p>
-                <div style="background: #f5f5f5; padding: 30px; border-radius: 10px;">
-                    <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 200px;">
-                        <div style="background: #667eea; width: 60px; height: 85%; border-radius: 5px 5px 0 0;"></div>
-                        <div style="background: #764ba2; width: 60px; height: 45%; border-radius: 5px 5px 0 0;"></div>
-                        <div style="background: #667eea; width: 60px; height: 65%; border-radius: 5px 5px 0 0;"></div>
-                        <div style="background: #764ba2; width: 60px; height: 35%; border-radius: 5px 5px 0 0;"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-around; margin-top: 10px; font-size: 0.8rem; color: #666;">
-                        <span>West LA</span>
-                        <span>South LA</span>
-                        <span>Central</span>
-                        <span>East LA</span>
-                    </div>
-                </div>
-                <p style="margin-top: 15px; font-size: 0.95rem;">
-                    <strong>Key Finding:</strong> West LA has 2.3x more facilities than South/East LA combined.
-                </p>
-                <div>
-                    <span class="tech-badge">D3.js</span>
-                    <span class="tech-badge">Chart.js</span>
-                </div>
-            </div>
-
-            <div class="viz-card">
-                <h3>4. Priority Areas Matrix</h3>
-                <p>
-                    Scatter plot matrix showing relationship between population density, facility count,
-                    and socioeconomic indicators to identify high-priority intervention areas.
-                </p>
-                <div style="background: #f5f5f5; padding: 30px; border-radius: 10px; position: relative;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div style="background: white; border: 2px solid #ddd; padding: 20px; border-radius: 8px; text-align: center;">
-                            <div style="color: #ef4444; font-weight: bold; font-size: 1.2rem;">High Priority</div>
-                            <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">80K residents<br>Low facilities</div>
-                        </div>
-                        <div style="background: white; border: 2px solid #ddd; padding: 20px; border-radius: 8px; text-align: center;">
-                            <div style="color: #fbbf24; font-weight: bold; font-size: 1.2rem;">Medium</div>
-                            <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">200K residents<br>Moderate</div>
-                        </div>
-                    </div>
-                </div>
-                <p style="margin-top: 15px; font-size: 0.95rem;">
-                    <strong>Key Finding:</strong> 10 census tracts identified as highest priority for new facility placement.
-                </p>
-                <div>
-                    <span class="tech-badge">Plotly</span>
-                    <span class="tech-badge">Python</span>
-                </div>
-            </div>
+        <div class="section">
+            <h2>1. Geographic Facility Distribution Map</h2>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#maps" target="_blank" style="color: #60a5fa;">Analysis → Interactive Maps Section</a></p>
+            <p><strong>Description:</strong> Interactive choropleth map showing healthcare facility density across LA County census tracts using Leaflet.js and GeoJSON data.</p>
+            <ul>
+                <li>Color intensity represents facilities per 10,000 residents</li>
+                <li>Hover tooltips show detailed tract-level statistics</li>
+                <li>KD-tree algorithm calculates nearest facility distances</li>
+                <li>Uses CA State Plane projection (EPSG:2229) for accuracy</li>
+            </ul>
+            <p><strong>Key Finding:</strong> South LA and East LA show 2.1 facilities per 10K residents vs. West LA's 7.8 per 10K.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Live Map →</a>
         </div>
 
-        <div class="hero" style="margin-top: 40px;">
-            <h2 style="color: #333; font-size: 1.6rem; margin-bottom: 15px;">🔗 View All Visualizations</h2>
-            <p>
-                All visualizations are integrated into the final project dashboard with interactive features,
-                real-time data updates, and detailed methodology documentation.
-            </p>
-            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank"
-               style="display: inline-block; margin-top: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 25px; text-decoration: none; font-weight: 600;">
-                View Interactive Dashboard →
-            </a>
+        <div class="section">
+            <h2>2. Access Distance Heatmap</h2>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#heatmaps" target="_blank" style="color: #60a5fa;">Analysis → Heatmap Section</a></p>
+            <p><strong>Description:</strong> Heatmap showing average distance to nearest healthcare facility by census tract, identifying access deserts.</p>
+            <ul>
+                <li>Green areas: <0.5km average distance (good access)</li>
+                <li>Yellow areas: 0.5-1.5km average distance (moderate access)</li>
+                <li>Red areas: >1.5km average distance (limited access)</li>
+                <li>Generated with GeoPandas and Matplotlib</li>
+            </ul>
+            <p><strong>Key Finding:</strong> 80,831 residents live in access deserts with >1.5km average distance.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Live Heatmap →</a>
+        </div>
+
+        <div class="section">
+            <h2>3. Regional Facility Comparison</h2>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#regional" target="_blank" style="color: #60a5fa;">Analysis → Regional Breakdown</a></p>
+            <p><strong>Description:</strong> Interactive bar chart comparing total facilities and per-capita density across LA County regions.</p>
+            <ul>
+                <li>Built with D3.js and Chart.js for interactivity</li>
+                <li>Shows both absolute counts and normalized per-capita rates</li>
+                <li>Includes population overlay for context</li>
+                <li>Filterable by facility type</li>
+            </ul>
+            <p><strong>Key Finding:</strong> West LA has 2.3x more facilities than South/East LA combined despite smaller population.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Live Chart →</a>
+        </div>
+
+        <div class="section">
+            <h2>4. Priority Areas Matrix</h2>
+            <p><strong>Location:</strong> <a href="https://la-healthcare-access-mapping.vercel.app/analysis#priority" target="_blank" style="color: #60a5fa;">Analysis → Priority Matrix</a></p>
+            <p><strong>Description:</strong> Scatter plot matrix showing relationship between population density, facility count, and socioeconomic indicators.</p>
+            <ul>
+                <li>Interactive Plotly visualization with zoom and pan</li>
+                <li>Color-coded by priority level (high, medium, low)</li>
+                <li>Identifies 10 highest-priority census tracts for intervention</li>
+                <li>Incorporates median income and uninsured rate data</li>
+            </ul>
+            <p><strong>Key Finding:</strong> 10 census tracts identified as critical priority for new facility placement.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">View Live Matrix →</a>
+        </div>
+
+        <div class="section">
+            <h2>View All Visualizations</h2>
+            <p>All four visualizations are integrated into the live dashboard with full interactivity, real-time data updates, and detailed methodology.</p>
+            <a href="https://la-healthcare-access-mapping.vercel.app/analysis" target="_blank" class="viz-link">Go to Full Analysis Dashboard →</a>
         </div>
     </div>
 </body>
