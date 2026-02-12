@@ -243,6 +243,21 @@
                 </div>
             </a>
 
+            <!-- Milestone 3: Project-Specific Visualizations -->
+            <a href="project-visualizations/" class="assignment-card">
+                <div class="assignment-number">6</div>
+                <span class="status-badge">✓ Complete</span>
+                <h2>Project-Specific Visualizations</h2>
+                <p class="due-date">Project Milestone | Fall 2025</p>
+                <p>Two custom visualizations directly supporting project conclusions: optimal facility placement strategy map and 10-year policy intervention ROI projection timeline.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">KD-Tree</span>
+                    <span class="tech-badge">Financial Modeling</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">Policy Analysis</span>
+                </div>
+            </a>
+
             <!-- Final Project: LA Healthcare Access Mapping -->
             <a href="final-project/" class="assignment-card" style="grid-column: 1 / -1;">
                 <div class="assignment-number">🏆</div>
