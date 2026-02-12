@@ -1,8 +1,11 @@
-[phases.setup]
-nixPkgs = ["php82", "nginx"]
+[variables]
+NIXPACKS_PKGS = "php82"
 
-[phases.install]
-cmds = ["echo 'No dependencies to install'"]
+[phases.setup]
+nixPkgs = ["php82"]
+
+[phases.build]
+cmds = ["echo 'PHP project - no build needed'"]
 
 [start]
-cmd = "php -S 0.0.0.0:$PORT -t ."
+cmd = "php -S 0.0.0.0:${PORT:-8080} -t ."
